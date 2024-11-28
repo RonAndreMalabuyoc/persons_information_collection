@@ -11,16 +11,25 @@ def collect_information():
     return persons_information
 
 def write_to_file(file_name, data):
-    with open(file_name, 'a') as file:
-        for key, value in data.items():
-            file.write(f"{key}: {value}\n")
-        file.write("\n")  
-
+    try:
+        with open(file_name, 'a') as file:
+            for key, value in data.items():
+                file.write(f"{key}: {value}\n")
+            file.write("\n")  
+    except:
+        print("oops")
+    
 def main():
     file_name = "writable.txt"  
-    user_info = collect_information() 
-    write_to_file(file_name, user_info)  
-    print(f"Information saved to {file_name}!")
+    while True:
+        user_info = collect_information() 
+        write_to_file(file_name, user_info)  
+        print(f"Information saved to {file_name}!")
+
+        new_person = input("Will you input a new person (yes/no): ")
+        if new_person != "yes":
+            print("Say goodbye")
+            break
 
 if __name__ == "__main__":
     main()
