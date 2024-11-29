@@ -12,6 +12,7 @@ def write_to_file(file_name, data):
         with open(file_name, "a") as file:
             for key, value in data.items():
                 file.write(f"{key}: {value}\n")
+            file.write("-" * 40 + "\n")
     except Exception as e:
         print(f"Error: {e}")
 
