@@ -1,4 +1,3 @@
-#Create another program that ask user for fullname. Find the full name in the txt file (output of program1). Display the informations found in the txt file.
 def find_personal_information():
     try:
         with open("writable.txt", "r") as file:
