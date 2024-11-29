@@ -1,0 +1,10 @@
+#Create another program that ask user for fullname. Find the full name in the txt file (output of program1). Display the informations found in the txt file.
+
+def find_person():
+    try:
+        with open("writable.txt",'r') as file:
+            data = file.readline()
+
+        search_name = input("Input the Full name of the person you want searched: ")
+    except:
+        print("no person was found")
