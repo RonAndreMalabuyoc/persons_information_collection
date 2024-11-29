@@ -1,6 +1,12 @@
-Full name: sure
-Full address: sure
-Phone number: srue
-Email_address: srue
-Date of birth: srue
+Full name: Andre
+Address: Sure
+Phone number: Sure
+Email_address: Sure
+Date of birth: Sure
+
+Full name: Andrei
+Address: Surely
+Phone number: Surely
+Email_address: Lunchly
+Date of birth: Prime
 

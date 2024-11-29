@@ -3,7 +3,7 @@ def collect_information():
 
     persons_information = {
         "Full name": input("Please put in you're full name: ").strip(),
-        "Full address": input("Please put in you're address: ").strip(),
+        "Address": input("Please put in you're address: ").strip(),
         "Phone number": input("Please put in you're phone number: ").strip(),
         "Email_address": input("Please put your email address: ").strip(),
         "Date of birth": input("Please put in you're date of birth: ").strip(),
