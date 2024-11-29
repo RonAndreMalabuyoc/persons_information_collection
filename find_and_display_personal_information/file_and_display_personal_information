@@ -1,28 +1,28 @@
 #Create another program that ask user for fullname. Find the full name in the txt file (output of program1). Display the informations found in the txt file.
 def find_personal_information():
-    file_name = "writable.txt"
-
     try:
-        with open(file_name, "r") as file:
-            data = file.readlines()
+        with open("writable.txt", "r") as file:
+            data = file.read().split("-" * 40 + "\n") 
         
         while True:
             search_name = input("Enter the full name to search: ").strip()
             found = False
 
-            for i, line in enumerate(data):
-                if line.strip().startswith("Full Name:") and search_name.lower() in line.lower():
-                    found = True
+            for entry in data:
+                if f"Full name: {search_name}" in entry:
                     print("\nInformation Found:")
-                    
-                    for info_line in data[i:]:
-                        if info_line.strip() == "-" * 40:
-                            break
-                        print(info_line.strip())
+                    print(entry.strip()) 
+                    found = True
                     break
 
+            if not found:
+                print(f"No information found for the name: {search_name}")
+
+            if input("Search another name? (yes/no): ").strip() != "yes":
+                break
+
     except FileNotFoundError:
-        print(f"Error: File '{file_name}' not found.")
+        print("Error: 'writable.txt' not found.")
 
 if __name__ == "__main__":
     find_personal_information()
